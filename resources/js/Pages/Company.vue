@@ -1,9 +1,16 @@
+<script setup>
+import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
+import { Head } from '@inertiajs/inertia-vue3';
+</script>
+
 <template>
+    <Head title="Company" />
+
     <BreezeAuthenticatedLayout>
         <!-- header -->
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Books List
+                Company
             </h2>
         </template>
         <div class="py-12">
@@ -39,7 +46,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    
+                    <Pagination :links="data.links"></Pagination>
+
                 </div>
             </div>
         </div>
@@ -49,12 +57,14 @@
 <script>
 
 import Authenticated from './../Layouts/Authenticated.vue'
+import Pagination from './../Components/Pagination.vue';
 
 export default {
     props: ['data'],
     components: {
-        Authenticated,
-    }
+    Authenticated,
+    Pagination
+}
 }
 
 </script>

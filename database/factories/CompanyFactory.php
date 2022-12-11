@@ -16,13 +16,13 @@ class CompanyFactory extends Factory
         return [
             'property_manager' => $this->faker->name,
             'location_p'
-            => $this->faker->name,
+            => $this->faker->address(),
             'landlord' => $this->faker->name,
             'location_l'
-            => $this->faker->name,
+            => $this->faker->address(),
             'tenant' => $this->faker->name,
             'location_t'
-            => $this->faker->name,
+            => $this->faker->address(),
         ];
     }
 }
